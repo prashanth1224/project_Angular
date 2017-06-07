@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ngClassifieds</title>
+	<link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+	<link rel="stylesheet" type="text/css" href="node_modules/mdi/css/materialdesignicons.min.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body ng-app="ngClassifieds">
+
+	<ui-view></ui-view>
+
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-animate.js"></script>
+	<!-- <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+	<script type="text/javascript" src="node_modules/angular-animate/angular-animate.js"></script> -->
+	<script type="text/javascript" src="node_modules/angular-aria/angular-aria.js"></script>
+	<script type="text/javascript" src="node_modules/angular-material/angular-material.js"></script>
+	<script type="text/javascript" src="scripts/app.js"></script>
+	<script type="text/javascript" src="components/classifieds/classifieds.ctr.js"></script>
+	<script type="text/javascript" src="components/classifieds/classifieds.fac.js"></script>
+	<script type="text/javascript" src="components/classifieds/new/classifieds.new.ctr.js"></script>
+	<script type="text/javascript" src="components/classifieds/edit/classifieds.edit.ctr.js"></script>
+	<script type="text/javascript" src="components/classifieds/card/classified-card.dir.js"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+	<script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+</body>
+</html>
+
+<!-- 
+(function(){
+	"use strict";
+	
+	angular
+	.module("ngClassifieds")
+	.factory("classifiedsFactory", function($http){
+
+		function getClassifieds(){
+			return $http.get('data/classifieds.json');
+		}
+
+		return {
+			getClassifieds : getClassifieds
+		}
+	});
+})(); -->
+
+
+
+<!-- // Immediately invoked functional expressions for lexical  -->
+<!-- // scoping which will use for not to disturb global scope -->
+<!-- (function(){
+	"use strict";
+
+	angular
+	.module("ngClassifieds")
+	.controller("classifiedsCtrl", function($scope, $http, classifiedsFactory, $mdSidenav, $mdToast, $mdDialog){
+
+		var vm = this;
+
+		vm.openSidebar = openSidebar;
+		vm.closeSidebar = closeSidebar;
+		vm.saveClassified = saveClassified;
+		vm.editClassified = editClassified;
+		// vm.saveEditClassified = saveEditClassified;
+		vm.deleteClassified = deleteClassified;
+
+
+		classifiedsFactory.getClassifieds().then(function(classifieds){
+			vm.classifieds = classifieds.data;
+			vm.categories = getCategories(vm.classifieds);
+		});
+
+		var contact = {
+			name : "Prashanth",
+			phone: "(555) 555-0000",
+			email: "pr@gmail.com"
+		};
+
+		
+
+		function openSidebar(){
+			$mdSidenav('left').open();
+		}
+
+		function closeSidebar(){
+			$mdSidenav('left').close();
+		}
+
+		function saveClassified (classified){
+			if (classified) {
+				classified.contact = contact;
+				vm.classifieds.push(classified);
+				vm.classified = {};
+				closeSidebar();
+				showToast("classified saved!");
+			}  		 	
+		}
+
+		function editClassified (classified){
+			vm.editing = true;
+			openSidebar();
+			vm.classified = classified;
+		}
+
+
+		function saveEditClassified(){
+			vm.editing = false;
+			vm.classified = {};
+			closeSidebar();
+			showToast("Edit classified saved");
+		}
+
+		function deleteClassified(event, classified){
+			var confirm = $mdDialog.confirm()
+			.title('Are you sure, you want to delete' + classified.title + '?')
+			.ok('Yes')
+			.cancel('No')
+			.targetEvent(event);
+			$mdDialog.show(confirm).then(function(){
+				var index = $scope.classifieds.indexOf(classified);
+				vm.classifieds.splice(index, 1);
+			}, function(){
+
+			});
+		}
+
+
+		function showToast(message){
+			$mdToast.show(
+				$mdToast.simple()
+				.content(message)
+				.position("top right")
+				.hideDelay(3000)
+				);	
+		}
+
+		function getCategories(classifieds){
+			var categories = [];
+			angular.forEach(classifieds, function(item){
+				angular.forEach(item.categories, function(category){
+					categories.push(category);
+				});
+			});
+
+			return _.uniq(categories);
+		}
+
+	});
+})();	 -->
