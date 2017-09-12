@@ -86,7 +86,7 @@
 			.targetEvent(event);
 			$mdDialog.show(confirm).then(function(){
 				var index = $scope.classifieds.indexOf(classified);
-				vm.classifieds.splice(index, 1);
+				$scope.classifieds.splice(index, 1);
 			}, function(){
 
 			});
