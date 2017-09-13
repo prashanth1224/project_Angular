@@ -1,6 +1,5 @@
-<md-card ng-repeat="classified in classifieds | filter: classifiedsFilter | filter: category" 
-	 flex-xs="100" flex-sm="100" flex-md="30"
-	class = 'classified'>
+<md-card ng-repeat="classified in classifieds | filter: classifiedsFilter | filter: category"
+	 flex-gt-sm="66" flex="33"	class = 'classified'>
 	<img ng-src="{{ classified.image }}" alt="">
 	<md-card-content>
 		<div class="classified-info" ng-show="!showContact">
