@@ -6,6 +6,11 @@ angular.module("ngClassifieds", ["ngMaterial", "ui.router"])
 			.accentPalette('orange');
 
 		$stateProvider
+			.state('/', {
+				url: '/classifieds',
+				templateUrl: 'components/classifieds/classifieds.tpl.html',
+				controller: 'classifiedsCtrl as vm'
+			})
 			.state('classifieds', {
 				url: '/classifieds',
 				templateUrl: 'components/classifieds/classifieds.tpl.html',
