@@ -10,3 +10,9 @@ Then serve the app with whichever you like. you can use http-server for quick so
 npm install -g http-server
 
 http-server
+
+OR
+
+You can directly visit the following Url
+
+https://prashanth1224.github.io/project_Angular1/#/
