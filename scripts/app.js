@@ -29,6 +29,6 @@ angular.module("ngClassifieds", ["ngMaterial", "ui.router"])
 					classified: null
 				}
 			});
-
+		$urlRouterProvider.when('', '/');
 
 	});
