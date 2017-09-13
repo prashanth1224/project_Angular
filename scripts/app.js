@@ -7,7 +7,7 @@ angular.module("ngClassifieds", ["ngMaterial", "ui.router"])
 
 		$stateProvider
 			.state('/', {
-				url: '/classifieds',
+				url: '/',
 				templateUrl: 'components/classifieds/classifieds.tpl.html',
 				controller: 'classifiedsCtrl as vm'
 			})
