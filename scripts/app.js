@@ -1,5 +1,5 @@
 angular.module("ngClassifieds", ["ngMaterial", "ui.router"])
-	.config(function($mdThemingProvider, $stateProvider){
+	.config(function($mdThemingProvider, $stateProvider,$urlRouterProvider){
 		
 		$mdThemingProvider.theme('default')
 			.primaryPalette('teal')
