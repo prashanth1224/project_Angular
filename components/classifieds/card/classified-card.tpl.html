@@ -1,5 +1,5 @@
 <md-card ng-repeat="classified in classifieds | filter: classifiedsFilter | filter: category"	 
-	 class = 'classified phoneViewPort mediumViewPort largeViewPort'>
+	 class = 'classified phoneViewPort mediumViewPort largeViewPort fontSize'>
 	<img ng-src="{{ classified.image }}" alt="">
 	<md-card-content>
 		<div class="classified-info" ng-show="!showContact">

@@ -1,43 +1,72 @@
-button .material-icons{
+/*button .material-icons{
 	margin-top: 7px;
 }
+*/
 
 @media (min-width: 800px) {
-	.phoneViewPort {
-		width: 100%;
-		float: left;
-	}
-}
-
-@media (min-width: 1000px) {
-	.mediumViewPort {
-		width: 47%;
-		float: left;
-	}
+    .md-button {
+        font-size: 28px;
+    }
+    button .material-icons {
+        margin-top: 0px;
+    }
 }
 
 @media (min-width: 1200px) {
-	.largeViewPort {
-		width: 30%;
-		float: left;
-	}
+    .md-button {
+        font-size: 14px;
+    }
+    button .material-icons {
+        margin-top: 7px;
+    }
 }
 
 
-.classified.ng-enter, .classified.ng-move {
-	transition: 0.4 all;
-	opacity: 0
+@media (min-width: 800px) {
+    .phoneViewPort {
+        width: 100%;
+        float: left;
+        font-size: 28px;
+    }
 }
 
-.classified.ng-enter.ng-enter-active, .classified.ng-move.ng-move-active {
-	opacity: 1
+@media (min-width: 1000px) {
+    .mediumViewPort {
+        width: 47%;
+        float: left;
+        font-size: 18px;
+    }
 }
 
-.classified.ng-leave{
-	animation: 0.4s fade_classified;
+@media (min-width: 1200px) {
+    .largeViewPort {
+        width: 30%;
+        float: left;
+        font-size: 16px;
+    }
+}
+
+
+.classified.ng-enter,
+.classified.ng-move {
+    transition: 0.4 all;
+    opacity: 0
+}
+
+.classified.ng-enter.ng-enter-active,
+.classified.ng-move.ng-move-active {
+    opacity: 1
+}
+
+.classified.ng-leave {
+    animation: 0.4s fade_classified;
 }
 
 @keyframes fade_classified {
-	from { opacity: 1; }
-	to { opacity: 0; }
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
